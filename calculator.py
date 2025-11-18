@@ -1,42 +1,26 @@
-"""
-calculator.py
-- Defines functions used to create a simple calculator
-
-One function per operation, in order.
-"""
-# First example
 import math
-def add(a, b): 
-    return a+b
 
-def sub(a, b):
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
     return a - b
 
-def mul(a, b):
+def multiply(a, b):
     return a * b
 
-def div(a, b):
-    try:
-        if a == 0:
-            raise ZeroDivisionError("Cannot divide by zero")
-        return b/a # raise ZeroDivisionError if a == 0
-    except ZeroDivisionError as e:
-        print(f"Error: {e}")
-        return 0
+def divide(a, b):
+    if a == 0:
+        raise ZeroDivisionError
+    return b / a
 
-def log(a, b):
-    try:
-        if a <= 0:
-            raise ValueError("Argument of log must be greater than 0")
-        if b <=0 or b == 1:
-            raise ValueError("Base of log must be greater than 1")
+def logarithm(a, b):
+    if a <= 0 or a == 1:
+        raise ValueError
+    if b <= 0:
+        raise ValueError
+    return math.log(b, a)
 
-        return math.log(a, b)
-    except ValueError as e:
-        print(f"Error: {e}")
-
-
-def exp(a, b):
-    return a**b
-
+def exponent(a, b):
+    return a ** b
 
